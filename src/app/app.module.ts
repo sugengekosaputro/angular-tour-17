@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,6 +37,9 @@ import { MessagesComponent } from './messages/messages.component';
     MessagesComponent,
     HeroSearchComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [
+    provideClientHydration()
+  ]
 })
 export class AppModule { }
